@@ -41,38 +41,24 @@ import names2 from './namespaced/names2';
 // type N1 = typeof names1;
 // effects: {},
 
-const config1 = {
+const base = {
   onInitialize,
   state,
   actions,
   effects,
 };
 
-const config2 = {
-  onInitialize: config1.onInitialize,
-  state: { ...config1.state, names1: names1.state },
-  actions: { ...config1.actions, names1: names1.actions },
-  effects,
-};
-const configAA = {
-  onInitialize: config1.onInitialize,
-  state: { ...config1.state },
-  actions: { ...config1.actions },
+const baseCopy = {
+  onInitialize: base.onInitialize,
+  state: { ...base.state },
+  actions: { ...base.actions },
   effects,
 };
 
 export const config =
   // config2;
 
-  merge(
-    configAA,
-    names1,
-
-    namespaced({ names1, names2 })
-  );
-// )
-// export const config = config1; // merge(config2, names1);
-// console.log(config.state.count)
+  merge(baseCopy, namespaced({ names1, names2 }));
 
 export const useApp = createHook<typeof config>();
 

@@ -6,7 +6,7 @@ const names1Actions: {
   incr1: Action;
 } = {
   incr: ({ state, actions }, amount) => {
-    state.names1.count += -1;
+    state.names1.count += -4;
     // state.names2.count += 2;
   },
   incr1: ({ state, actions }, amount) => {
@@ -17,7 +17,7 @@ const names1Actions: {
 };
 
 const names1 = {
-  state: { count: 5 },
+  state: { count: 10, count1: 5 },
   actions: names1Actions,
 };
 export default names1;
