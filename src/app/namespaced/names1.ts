@@ -7,19 +7,17 @@ const names1Actions: {
 } = {
   incr: ({ state, actions }, amount) => {
     state.names1.count += 1;
-    state.ns2.count += 2;
     // state.names2.count += 2;
   },
   incr1: ({ state, actions }, amount) => {
-    state.names1.count = 1;
+    // state.names1.count = 3;
     actions.names1.incr(1);
     // actions.names2.incr(1);
   },
 };
 
-const config = {
-  state: { count: 4 },
+const names1 = {
+  state: { count: 5 },
   actions: names1Actions,
 };
-export default config;
-type N1 = typeof names1;
+export default names1;

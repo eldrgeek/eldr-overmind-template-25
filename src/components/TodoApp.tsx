@@ -13,6 +13,7 @@ const TodoApp: React.FC = () => {
       <header className="header">
         <h1>
           todo {state.names1.count}
+          {state.ns2.count}
           {state.count} {console.log('NS2', Object.keys(state))}
         </h1>
         <button onClick={() => actions.names1.incr1()}>Click</button>
