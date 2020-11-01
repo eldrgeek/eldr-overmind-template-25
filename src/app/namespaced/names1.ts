@@ -6,7 +6,7 @@ const names1Actions: {
   incr1: Action;
 } = {
   incr: ({ state, actions }, amount) => {
-    state.names1.count += 1;
+    state.names1.count += -1;
     // state.names2.count += 2;
   },
   incr1: ({ state, actions }, amount) => {

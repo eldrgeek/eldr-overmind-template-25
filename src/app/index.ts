@@ -8,7 +8,7 @@ import { merge, namespaced } from 'overmind/config';
 import { Action } from 'overmind';
 import ns2 from './namespaced/ns2';
 import names1 from './namespaced/names1';
-import names4 from './namespaced/names2';
+import names2 from './namespaced/names2';
 
 // const names1Actions: {
 //   incr: Action<number>;
@@ -54,15 +54,21 @@ const config2 = {
   actions: { ...config1.actions, names1: names1.actions },
   effects,
 };
+const configAA = {
+  onInitialize: config1.onInitialize,
+  state: { ...config1.state },
+  actions: { ...config1.actions },
+  effects,
+};
 
 export const config =
   // config2;
 
   merge(
-    config2,
+    configAA,
     names1,
 
-    namespaced({ names4, names3: names1, ns2: ns2 })
+    namespaced({ names1, names2 })
   );
 // )
 // export const config = config1; // merge(config2, names1);

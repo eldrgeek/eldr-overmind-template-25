@@ -7,7 +7,9 @@ import { config } from './index';
 const rootElement = document.getElementById('root');
 
 export const overmind = createOvermind(config, {
-  devtools: false,
+  devtools: navigator.userAgent.match(/ CrOS /)
+    ? 'penguin.linux.test:3031'
+    : 'localhost:3031',
 });
 
 const doRender = (Element) => {
