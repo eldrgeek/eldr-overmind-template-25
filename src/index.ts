@@ -1,19 +1,19 @@
-import { doRender } from './appUtil';
-import TodoApp from './components/TodoApp';
+import { doRender } from './app/appUtil';
+import App from './components/App';
 import 'todomvc-common/base.css';
 import 'todomvc-app-css/index.css';
 console.log('index is loaded');
 const m: any = module;
 console.log('hot check');
 if (m.hot) {
-  m.hot.accept(['./appUtil', './components/TodoApp'], () => {
+  m.hot.accept(['./app/appUtil', './components/App'], () => {
     console.log('accept');
-    doRender(TodoApp);
+    doRender(App);
   });
   console.log('hot and not accepted');
-  doRender(TodoApp);
+  doRender(App);
 } else {
   console.log('not hot');
-  doRender(TodoApp);
+  doRender(App);
 }
- doRender(TodoApp);
+doRender(App);
