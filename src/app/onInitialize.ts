@@ -1,21 +1,20 @@
 import { OnInitialize } from 'overmind';
-import { Filter } from './state';
 
 export const onInitialize: OnInitialize = (
   { state, actions, effects },
   instance
 ) => {
-  state.todos = effects.storage.getTodos();
-
+  state.names1 = effects.storage.getState('names1');
+  console.log(effects.storage.getState('names1'));
   instance.reaction(
-    ({ todos }) => todos,
-    (todos) => effects.storage.saveTodos(todos),
+    ({ names1 }) => names1,
+    (names1) => effects.storage.saveState('names1', state.names1),
     { nested: true }
   );
 
-  effects.router.initialize({
-    '/': () => actions.changeFilter(Filter.ALL),
-    '/active': () => actions.changeFilter(Filter.ACTIVE),
-    '/completed': () => actions.changeFilter(Filter.COMPLETED),
-  });
+  // effects.router.initialize({
+  //   '/': () => actions.changeFilter(Filter.ALL),
+  //   '/active': () => actions.changeFilter(Filter.ACTIVE),
+  //   '/completed': () => actions.changeFilter(Filter.COMPLETED),
+  // });
 };

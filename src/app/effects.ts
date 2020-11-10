@@ -1,25 +1,9 @@
-import page from 'page';
-import { Todo } from './state';
-
 export const storage = {
-  saveTodos(todos: { [id: string]: Todo }) {
-    localStorage.setItem('todos', JSON.stringify(todos));
+  saveState(id: string, state: any) {
+    localStorage.setItem(id, JSON.stringify(state));
   },
-  getTodos(): { [id: string]: Todo } {
-    return {};
-    // return JSON.parse(localStorage.getItem('todos') || '{}');
-  },
-};
-
-export const router = {
-  initialize(routes: { [url: string]: (params: object) => void }) {
-    Object.keys(routes).forEach((url) => {
-      page(url, ({ params }) => routes[url](params));
-    });
-    page.start();
-  },
-  goTo(url: string) {
-    page.show(url);
+  getState(id: string): any {
+    return JSON.parse(localStorage.getItem(id) || '{}');
   },
 };
 

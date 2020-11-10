@@ -1,5 +1,5 @@
 import { Action } from 'overmind';
-import { IConfig } from 'overmind';
+// import { IConfig } from 'overmind';
 
 const names1Actions: {
   incr: Action<number>;
