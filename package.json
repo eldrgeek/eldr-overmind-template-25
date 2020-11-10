@@ -1,5 +1,5 @@
 {
-  "name": "overmind-todomvc-typescript",
+  "name": "overmind-template-working",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.tsx",

@@ -16,3 +16,4 @@ if (m.hot) {
   console.log('not hot');
   doRender(TodoApp);
 }
+ doRender(TodoApp);
