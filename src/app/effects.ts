@@ -3,7 +3,11 @@ export const storage = {
     localStorage.setItem(id, JSON.stringify(state));
   },
   getState(id: string): any {
-    return JSON.parse(localStorage.getItem(id) || '{}');
+    try {
+      return JSON.parse(localStorage.getItem(id) || '{}');
+    } catch (e) {
+      return {};
+    }
   },
 };
 

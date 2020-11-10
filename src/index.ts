@@ -1,7 +1,8 @@
 import { doRender } from './app/appUtil';
 import App from './components/App';
-import 'todomvc-common/base.css';
-import 'todomvc-app-css/index.css';
+// import 'tailwindcss';
+// import './tailwind.css';
+// import 'todomvc-app-css/index.css';
 console.log('index is loaded');
 const m: any = module;
 console.log('hot check');

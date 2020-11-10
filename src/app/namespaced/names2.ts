@@ -17,7 +17,7 @@ const names1Actions: {
 };
 
 const names1 = {
-  state: { count: 5 },
+  state: { count: 10 },
   actions: names1Actions,
 };
 export default names1;
